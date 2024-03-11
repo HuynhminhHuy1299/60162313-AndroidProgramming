@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/nutSo1"
+        android:text="NÚT SỐ 1"
+        android:textSize="20dp"
+        android:textColor="#0D8E82"
+        android:background="#D32D21"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="40dp" />
+
+    <Button
+        android:id="@+id/nutSo2"
+        android:text="NÚT SỐ 2"
+        android:textSize="20dp"
+        android:textColor="#FFC107"
+        android:background="#591E0C"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="40dp" />
+
+    <Button
+        android:id="@+id/nutSo3"
+        android:text="NÚT SỐ 3"
+        android:textSize="20dp"
+        android:textColor="#FF5722"
+        android:background="#B81E13"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="40dp" />
+</LinearLayout>
