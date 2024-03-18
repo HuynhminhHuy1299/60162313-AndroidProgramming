@@ -33,107 +33,69 @@ public class MainActivity extends AppCompatActivity {
         TimDieuKhien();
 
         //Gắn bộ lắng nghe sự kiện và code xử lý cho từng nút
-        View.OnClickListener boLangngheCong = new View.OnClickListener() {
+
+        nutCong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Xử lý cộng ở đây
-                //Code xử lý cộng ở đây
-                //B1. Lấy dữ liệu 2 số
-                //B1.1 Tìm EditText số 1 và 2
-
-                //B1.2. Nhập dữ liệu
-                String soThu1 = editTextSo1.getText().toString();
-                String soThu2 = editTextSo1.getText().toString();
-                //B1.3. Chuyễn dữ liệu từ chuỗi sang số
-                float soA = Float.parseFloat(soThu1);
-                float soB = Float.parseFloat(soThu2);
-                //B2.Tính toán
-                float Tong = soA + soB;
-                //B3. Hiện kết quả
-                //B3.1
-
-                //B3.2. Chuẩn bị dữ liệu xuất, biến thành dạng chuỗi
-                String chuoiKQ = String.valueOf(Tong);
-                //B3.3. Gắn kết quả lên đk
-                editTextKQ.setText(chuoiKQ);
+                XULY_CONG();
             }
-        };
-        nutCong.setOnClickListener(boLangngheCong);
+        });
         nutTru.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Xử lý trừ ở đây
-                //Code xử lý trừ ở đây
-                //B1. Lấy dữ liệu 2 số
-                //B1.1 Tìm EditText số 1 và 2
-
-                //B1.2. Nhập dữ liệu
-                String soThu1 = editTextSo1.getText().toString();
-                String soThu2 = editTextSo1.getText().toString();
-                //B1.3. Chuyễn dữ liệu từ chuỗi sang số
-                float soA = Float.parseFloat(soThu1);
-                float soB = Float.parseFloat(soThu2);
-                //B2.Tính toán
-                float Hieu = soA - soB;
-                //B3. Hiện kết quả
-                //B3.1
-
-                //B3.2. Chuẩn bị dữ liệu xuất, biến thành dạng chuỗi
-                String chuoiKQ = String.valueOf(Hieu);
-                //B3.3. Gắn kết quả lên đk
-                editTextKQ.setText(chuoiKQ);
+                XULY_TRU();
             }
         });
         nutNhan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Xử lý nhân ở đây
-                //Code xử lý nhân ở đây
-                //B1. Lấy dữ liệu 2 số
-                //B1.1 Tìm EditText số 1 và 2
-
-                //B1.2. Nhập dữ liệu
-                String soThu1 = editTextSo1.getText().toString();
-                String soThu2 = editTextSo1.getText().toString();
-                //B1.3. Chuyễn dữ liệu từ chuỗi sang số
-                float soA = Float.parseFloat(soThu1);
-                float soB = Float.parseFloat(soThu2);
-                //B2.Tính toán
-                float Tich = soA * soB;
-                //B3. Hiện kết quả
-                //B3.1
-
-                //B3.2. Chuẩn bị dữ liệu xuất, biến thành dạng chuỗi
-                String chuoiKQ = String.valueOf(Tich);
-                //B3.3. Gắn kết quả lên đk
-                editTextKQ.setText(chuoiKQ);
+                XULY_NHAN();
             }
         });
         nutChia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Xử lý chia ở đây
-                //Code xử lý chia ở đây
-                //B1. Lấy dữ liệu 2 số
-                //B1.1 Tìm EditText số 1 và 2
-
-                //B1.2. Nhập dữ liệu
-                String soThu1 = editTextSo1.getText().toString();
-                String soThu2 = editTextSo1.getText().toString();
-                //B1.3. Chuyễn dữ liệu từ chuỗi sang số
-                float soA = Float.parseFloat(soThu1);
-                float soB = Float.parseFloat(soThu2);
-                //B2.Tính toán
-                float Thuong = soA / soB;
-                //B3. Hiện kết quả
-                //B3.1
-
-                //B3.2. Chuẩn bị dữ liệu xuất, biến thành dạng chuỗi
-                String chuoiKQ = String.valueOf(Thuong);
-                //B3.3. Gắn kết quả lên đk
-                editTextKQ.setText(chuoiKQ);
+                XULY_CHIA();
             }
         });
     }
-    
+
+    void XULY_CONG(){
+        // lấy dữ liệu
+        String so1 = editTextSo1.getText().toString();
+        String so2 = editTextSo2.getText().toString();
+        float num1 = Float.parseFloat(so1);
+        float num2 = Float.parseFloat(so2);
+        float tong = num1 + num2;
+        String chuoiKQ = String.valueOf(tong);
+        editTextKQ.setText(chuoiKQ);
+    }
+
+    void XULY_TRU(){
+        String so1 = editTextSo1.getText().toString();
+        String so2 = editTextSo2.getText().toString();
+        float num1 = Float.parseFloat(so1);
+        float num2 = Float.parseFloat(so2);
+        float tong = num1 - num2;
+        String chuoiKQ = String.valueOf(tong);
+        editTextKQ.setText(chuoiKQ);
+    }
+    void XULY_NHAN(){
+        String so1 = editTextSo1.getText().toString();
+        String so2 = editTextSo2.getText().toString();
+        float num1 = Float.parseFloat(so1);
+        float num2 = Float.parseFloat(so2);
+        float tong = num1 * num2;
+        String chuoiKQ = String.valueOf(tong);
+        editTextKQ.setText(chuoiKQ);
+    }
+    void XULY_CHIA(){
+        String so1 = editTextSo1.getText().toString();
+        String so2 = editTextSo2.getText().toString();
+        float num1 = Float.parseFloat(so1);
+        float num2 = Float.parseFloat(so2);
+        float tong = num1 / num2;
+        String chuoiKQ = String.valueOf(tong);
+        editTextKQ.setText(chuoiKQ);
+    }
 }
