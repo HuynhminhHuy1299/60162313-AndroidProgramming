@@ -16,8 +16,8 @@ public class FrameTinhTienDien extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField textfieldSoDienSD;
+	private JTextField textfieldTongTienDien;
 	public FrameTinhTienDien() {
 		setTitle("Ứng dụng tính tiền điện");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -28,36 +28,36 @@ public class FrameTinhTienDien extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Nhập Số Điện Sử Dụng");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel.setBounds(22, 23, 220, 33);
-		contentPane.add(lblNewLabel);
+		JLabel labelSoDienSD = new JLabel("Nhập Số Điện Sử Dụng");
+		labelSoDienSD.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		labelSoDienSD.setBounds(22, 23, 220, 33);
+		contentPane.add(labelSoDienSD);
 		
-		textField = new JTextField();
-		textField.setBounds(227, 25, 86, 33);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		textfieldSoDienSD = new JTextField();
+		textfieldSoDienSD.setBounds(227, 25, 86, 33);
+		contentPane.add(textfieldSoDienSD);
+		textfieldSoDienSD.setColumns(10);
 		
-		JTextArea txtrBcMc = new JTextArea();
-		txtrBcMc.setFont(new Font("Monospaced", Font.PLAIN, 15));
-		txtrBcMc.setText("Bậc 1: Mức sử dụng từ 0 - 50kWh: 1.678đ/kWh.\r\nBậc 2: Mức sử dụng từ 51 - 100kWh: 1.734đ/kWh.\r\nBậc 3: Mức sử dụng từ 101 - 200kWh: 2.014đ/kWh.\r\nBậc 4: Mức sử dụng từ 201 - 300kWh: 2.536đ/kWh.\r\nBậc 5: Mức sử dụng từ 301 - 400kWh: 2.834đ/kWh.\r\nBậc 6: Mức sử dụng từ 401Wh trở lên: 2.927đ/kWh.");
-		txtrBcMc.setBounds(28, 101, 524, 144);
-		contentPane.add(txtrBcMc);
+		JTextArea txtChuThich = new JTextArea();
+		txtChuThich.setFont(new Font("Monospaced", Font.PLAIN, 15));
+		txtChuThich.setText("Bậc 1: Mức sử dụng từ 0 - 50kWh: 1.678đ/kWh.\r\nBậc 2: Mức sử dụng từ 51 - 100kWh: 1.734đ/kWh.\r\nBậc 3: Mức sử dụng từ 101 - 200kWh: 2.014đ/kWh.\r\nBậc 4: Mức sử dụng từ 201 - 300kWh: 2.536đ/kWh.\r\nBậc 5: Mức sử dụng từ 301 - 400kWh: 2.834đ/kWh.\r\nBậc 6: Mức sử dụng từ 401Wh trở lên: 2.927đ/kWh.");
+		txtChuThich.setBounds(28, 101, 524, 144);
+		contentPane.add(txtChuThich);
 		
-		JLabel lblTngTinin = new JLabel("Tổng Tiền Điện");
-		lblTngTinin.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblTngTinin.setBounds(10, 401, 220, 33);
-		contentPane.add(lblTngTinin);
+		JLabel labelTongTienDien = new JLabel("Tổng Tiền Điện");
+		labelTongTienDien.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		labelTongTienDien.setBounds(10, 401, 125, 33);
+		contentPane.add(labelTongTienDien);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(145, 403, 86, 33);
-		contentPane.add(textField_1);
+		textfieldTongTienDien = new JTextField();
+		textfieldTongTienDien.setColumns(10);
+		textfieldTongTienDien.setBounds(145, 403, 86, 33);
+		contentPane.add(textfieldTongTienDien);
 		
-		JButton btnNewButton = new JButton("Tính");
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		btnNewButton.setBounds(334, 16, 141, 47);
-		contentPane.add(btnNewButton);
+		JButton btnTinh = new JButton("Tính");
+		btnTinh.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		btnTinh.setBounds(334, 16, 141, 47);
+		contentPane.add(btnTinh);
 		
 		JButton btnReset = new JButton("Reset");
 		btnReset.setFont(new Font("Tahoma", Font.PLAIN, 16));
