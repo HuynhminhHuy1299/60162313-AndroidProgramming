@@ -72,6 +72,13 @@ public class FrameTinhTienDien extends JFrame {
 		btnReset.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnReset.setBounds(485, 16, 141, 47);
 		contentPane.add(btnReset);
+		// Thêm ActionListener cho nút "Reset"
+		btnReset.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		        // Gọi hàm resetForm()
+		        resetForm();
+		    }
+		});
 		
 		
 	}
@@ -116,5 +123,11 @@ public class FrameTinhTienDien extends JFrame {
 	    // Hien thi tong tien dien tinh duoc vao textfieldTongTienDien
 	    textfieldTongTienDien.setText(String.valueOf(tongTien));
 	}
+	// Hàm resetForm để xóa nội dung trong các textfield
+	private void resetForm() {
+	    textfieldSoDienSD.setText(""); // Xóa nội dung trong textfield số điện sử dụng
+	    textfieldTongTienDien.setText(""); // Xóa nội dung trong textfield tổng tiền điện
+	}
+
 	
 }
