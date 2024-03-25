@@ -40,14 +40,33 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         TimDieuKhien();
 
-        nutTinhBMI.setOnClickListener(this);
-        nutReset.setOnClickListener(this);
-        radioButtonNu.setOnClickListener(this);
-        radioButtonNam.setOnClickListener(this);
+        nutTinhBMI.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+            }
+        });
+        nutReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        radioButtonNu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        radioButtonNam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
     void onClick(View v) {
         try {
