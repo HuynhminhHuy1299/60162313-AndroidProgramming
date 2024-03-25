@@ -41,57 +41,29 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+
+    public void Tinh(View view) {
         TimDieuKhien();
+        //Lấy giá trị nhập vào và ép kiểu về float
+        double chieuCao = Double.parseDouble(editTextHeight.getText().toString());
+        double canNang = Double.parseDouble(editTextWeight.getText().toString());
 
-        nutTinhBMI.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-        nutReset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-        radioButtonNu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-        radioButtonNam.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-    }
-    void onClick(View v) {
-        try {
-            //Lấy giá trị nhập vào và ép kiểu về float
-            double chieuCao = Double.parseDouble(editTextHeight.getText().toString());
-            double canNang = Double.parseDouble(editTextWeight.getText().toString());
-            DecimalFormat df = new DecimalFormat("0.00"); //định dạng lấy 2 con số
-            double BMI = canNang / (chieuCao * chieuCao); //chiều cao * chiều cao
-
-                    txtChiSo.setText(df.format(BMI) + "");
-                    if (BMI < 18)
-                        txtDanhGia.setText("Bạn hơi gầy");
-                    else if (18 <= BMI && BMI < 25) {
-                        txtDanhGia.setText("Bạn bình thường");
-                    } else if (25 <= BMI && BMI < 30) {
-                        txtDanhGia.setText("Bạn béo phì cấp độ 1");
-                    } else if (30 <= BMI && BMI < 35) {
-                        txtDanhGia.setText("Bạn béo phì cấp độ 2");
-                    } else if (35 <= BMI) {
-                        txtDanhGia.setText("Bạn béo phì cấp độ 3");
-                    }
-
-        } catch (Exception e) {
-            Toast.makeText(getBaseContext(), "Bạn chưa nhập dữ liệu", Toast.LENGTH_SHORT).show();
+        DecimalFormat df = new DecimalFormat("0.00"); //định dạng lấy 2 con số
+        double BMI = canNang / (chieuCao * chieuCao); //chiều cao * chiều cao
+        txtChiSo.setText(String.valueOf(BMI));
+        if (BMI < 18)
+            txtDanhGia.setText("Bạn hơi gầy");
+        else if (18 <= BMI && BMI < 25) {
+            txtDanhGia.setText("Bạn bình thường");
+        } else if (25 <= BMI && BMI < 30) {
+            txtDanhGia.setText("Bạn béo phì cấp độ 1");
+        } else if (30 <= BMI && BMI < 35) {
+            txtDanhGia.setText("Bạn béo phì cấp độ 2");
+        } else if (35 <= BMI) {
+            txtDanhGia.setText("Bạn béo phì cấp độ 3");
         }
-    }
 
     }
+}
