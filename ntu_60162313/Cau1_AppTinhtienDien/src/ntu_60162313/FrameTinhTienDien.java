@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
+import javax.swing.JButton;
 
 public class FrameTinhTienDien extends JFrame {
 
@@ -50,7 +51,17 @@ public class FrameTinhTienDien extends JFrame {
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		textField_1.setBounds(211, 403, 86, 33);
+		textField_1.setBounds(145, 403, 86, 33);
 		contentPane.add(textField_1);
+		
+		JButton btnNewButton = new JButton("Tính");
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		btnNewButton.setBounds(334, 16, 141, 47);
+		contentPane.add(btnNewButton);
+		
+		JButton btnReset = new JButton("Reset");
+		btnReset.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		btnReset.setBounds(485, 16, 141, 47);
+		contentPane.add(btnReset);
 	}
 }
