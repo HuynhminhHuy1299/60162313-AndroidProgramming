@@ -8,62 +8,80 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.text.DecimalFormat;
-
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    //Khai báo các đối tượng gắn với điều khiển
-    EditText editTextHeight;
-    EditText editTextWeight;
-    EditText editTextAge;
-    Button nutTinhBMI, nutReset;
+    EditText edtheight, edtweight;
+    RadioButton rdbnam, rdbnu;
     TextView txtChiSo, txtDanhGia;
-    RadioButton radioButtonNam, radioButtonNu;
-    void TimDieuKhien(){
-        editTextHeight = (EditText) findViewById(R.id.edtheight);
-        editTextWeight = (EditText) findViewById(R.id.edtheight);
-        nutTinhBMI = (Button) findViewById(R.id.btntinh);
-        nutReset = (Button) findViewById(R.id.btnreset);
-        txtChiSo = (TextView) findViewById(R.id.txtChiSo);
-        txtDanhGia = (TextView) findViewById(R.id.txtDanhGia);
-        radioButtonNam = (RadioButton) findViewById(R.id.rdbnam);
-        radioButtonNu = (RadioButton) findViewById(R.id.rdbnu);
-    }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        edtheight = findViewById(R.id.edtheight);
+        edtweight = findViewById(R.id.edtweight);
+        rdbnam = findViewById(R.id.rdbnam);
+        rdbnu = findViewById(R.id.rdbnu);
+        txtChiSo = findViewById(R.id.txtChiSo);
+        txtDanhGia = findViewById(R.id.txtDanhGia);
+
+        Button btntinh = findViewById(R.id.btntinh);
+        Button btnreset = findViewById(R.id.btnreset);
+
+        btntinh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tinhBMI();
+            }
+        });
+
+        btnreset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reset();
+            }
+        });
     }
 
+    public void Tinh(View v) {
+        tinhBMI();
+    }
 
-    public void Tinh(View view) {
-        TimDieuKhien();
-        //Lấy giá trị nhập vào và ép kiểu về float
-        double chieuCao = Double.parseDouble(editTextHeight.getText().toString());
-        double canNang = Double.parseDouble(editTextWeight.getText().toString());
+    public void tinhBMI() {
+        try {
+            double height = Double.parseDouble(edtheight.getText().toString());
+            double weight = Double.parseDouble(edtweight.getText().toString());
 
-        DecimalFormat df = new DecimalFormat("0.00"); //định dạng lấy 2 con số
-        double BMI = canNang / (chieuCao * chieuCao); //chiều cao * chiều cao
-        txtChiSo.setText(String.valueOf(BMI));
-        if (BMI < 18)
-            txtDanhGia.setText("Bạn hơi gầy");
-        else if (18 <= BMI && BMI < 25) {
-            txtDanhGia.setText("Bạn bình thường");
-        } else if (25 <= BMI && BMI < 30) {
-            txtDanhGia.setText("Bạn béo phì cấp độ 1");
-        } else if (30 <= BMI && BMI < 35) {
-            txtDanhGia.setText("Bạn béo phì cấp độ 2");
-        } else if (35 <= BMI) {
-            txtDanhGia.setText("Bạn béo phì cấp độ 3");
+            double bmi = weight / (height * height / 10000);
+
+            String danhGia = "";
+
+            if (bmi < 18.5) {
+                danhGia = "Gầy";
+            } else if (bmi >= 18.5 && bmi < 24.9) {
+                danhGia = "Bình thường";
+            } else if (bmi >= 24.9 && bmi < 29.9) {
+                danhGia = "Hơi béo";
+            } else {
+                danhGia = "Béo phì";
+            }
+
+            txtChiSo.setText(String.format("%.2f", bmi));
+            txtDanhGia.setText(danhGia);
+        } catch (Exception e) {
+            Toast.makeText(this, "Nhập thông tin không hợp lệ", Toast.LENGTH_SHORT).show();
         }
+    }
 
+    public void reset() {
+        edtheight.setText("");
+        edtweight.setText("");
+        txtChiSo.setText("");
+        txtDanhGia.setText("");
+        rdbnam.setChecked(false);
+        rdbnu.setChecked(false);
     }
 }
