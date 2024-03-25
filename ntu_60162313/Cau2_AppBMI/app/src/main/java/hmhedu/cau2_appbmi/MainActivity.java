@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     void TimDieuKhien(){
         editTextHeight = (EditText) findViewById(R.id.edtheight);
         editTextWeight = (EditText) findViewById(R.id.edtheight);
-        editTextAge = (EditText) findViewById(R.id.edtage);
         nutTinhBMI = (Button) findViewById(R.id.btntinh);
         nutReset = (Button) findViewById(R.id.btnreset);
         txtChiSo = (TextView) findViewById(R.id.txtChiSo);
@@ -70,8 +69,13 @@ public class MainActivity extends AppCompatActivity {
                         txtDanhGia.setText("Bạn béo phì cấp độ 3");
                     }
                     break;
-                    
+                case R.id.btnreset:
+                    editTextHeight.setText("");
+                    editTextWeight.setText("");
+                    txtDanhGia.setText("");
+                    txtChiSo.setText("");
+                    break;
             }
-        }
+        } catch ()
 
     }
