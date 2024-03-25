@@ -1,4 +1,4 @@
-package ntu_60162313.cau2_appBMI;
+package hmhedu.cau2_appbmi;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("ntu_60162313.cau2_appBMI", appContext.getPackageName());
+        assertEquals("hmhedu.cau2_appbmi", appContext.getPackageName());
     }
 }

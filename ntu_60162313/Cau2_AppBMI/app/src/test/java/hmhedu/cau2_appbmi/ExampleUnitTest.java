@@ -1,4 +1,4 @@
-package ntu_60162313.cau2_appBMI;
+package hmhedu.cau2_appbmi;
 
 import org.junit.Test;
 
