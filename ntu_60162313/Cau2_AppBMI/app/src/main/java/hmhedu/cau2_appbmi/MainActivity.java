@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         nutTinhBMI.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+
             }
         });
         nutReset.setOnClickListener(new View.OnClickListener() {
@@ -74,9 +74,8 @@ public class MainActivity extends AppCompatActivity {
             double chieuCao = Double.parseDouble(editTextHeight.getText().toString());
             double canNang = Double.parseDouble(editTextWeight.getText().toString());
             DecimalFormat df = new DecimalFormat("0.00"); //định dạng lấy 2 con số
-            double BMI = canNang / Math.pow(chieuCao, 2) * 10000; //chiều cao * chiều cao
-            switch (v.getId()) { //lấy id các button
-                case R.id.btntinh: //nếu id là button tính
+            double BMI = canNang / (chieuCao * chieuCao); //chiều cao * chiều cao
+
                     txtChiSo.setText(df.format(BMI) + "");
                     if (BMI < 18)
                         txtDanhGia.setText("Bạn hơi gầy");
@@ -89,14 +88,7 @@ public class MainActivity extends AppCompatActivity {
                     } else if (35 <= BMI) {
                         txtDanhGia.setText("Bạn béo phì cấp độ 3");
                     }
-                    break;
-                case R.id.btnreset:
-                    editTextHeight.setText("");
-                    editTextWeight.setText("");
-                    txtDanhGia.setText("");
-                    txtChiSo.setText("");
-                    break;
-            }
+
         } catch (Exception e) {
             Toast.makeText(getBaseContext(), "Bạn chưa nhập dữ liệu", Toast.LENGTH_SHORT).show();
         }

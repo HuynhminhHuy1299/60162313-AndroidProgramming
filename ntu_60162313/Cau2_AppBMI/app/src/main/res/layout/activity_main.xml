@@ -42,6 +42,7 @@
             android:id="@+id/edtheight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="#C8CBCD"
             android:hint="Nhập chiều cao"
             />
     </LinearLayout>
@@ -64,6 +65,7 @@
             android:paddingLeft="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="#C8CBCD"
             android:hint="Nhập cân nặng"
             />
     </LinearLayout>
