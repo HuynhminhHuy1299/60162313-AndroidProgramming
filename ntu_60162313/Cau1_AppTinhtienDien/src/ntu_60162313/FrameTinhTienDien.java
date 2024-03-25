@@ -2,7 +2,10 @@ package ntu_60162313;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
+import javax.swing.JOptionPane;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -90,7 +93,28 @@ public class FrameTinhTienDien extends JFrame {
 	    } else {
 	        tongTien = (50 * 1.484) + (50 * 1.533) + (100 * 1.786) + (100 * 2.242) + (100 * 2.503) + ((soDien - 400) * 2.587);
 	    }
-
+	    
 	    return tongTien;
 	}
+	private void tinhTongTienDien() {
+	    // Lay so dien su dung tu textfieldSoDienSD
+	    String soDienString = textfieldSoDienSD.getText();
+
+	    // Kiem tra xem chuoi nhap vao co phai la so nguyen khong
+	    if (!soDienString.matches("\\d+")) {
+	        // Neu khong, hien thi thong bao loi va ket thuc ham
+	        JOptionPane.showMessageDialog(this, "So dien su dung khong hop le.", "Loi", JOptionPane.ERROR_MESSAGE);
+	        return;
+	    }
+
+	    // Chuyen doi so dien tu String sang kieu int
+	    int soDien = Integer.parseInt(soDienString);
+	    
+	    // Tien hanh tinh tong tien dien
+	    double tongTien = tinhTienDien(soDien);
+	    
+	    // Hien thi tong tien dien tinh duoc vao textfieldTongTienDien
+	    textfieldTongTienDien.setText(String.valueOf(tongTien));
+	}
+	
 }
