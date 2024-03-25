@@ -60,13 +60,13 @@ public class MainActivity extends AppCompatActivity {
             String danhGia = "";
 
             if (bmi < 18.5) {
-                danhGia = "Gầy";
+                danhGia = "Bạn bị gầy";
             } else if (bmi >= 18.5 && bmi < 24.9) {
                 danhGia = "Bình thường";
             } else if (bmi >= 24.9 && bmi < 29.9) {
-                danhGia = "Hơi béo";
+                danhGia = "Bạn hơi béo";
             } else {
-                danhGia = "Béo phì";
+                danhGia = "Bạn bị béo phì";
             }
 
             txtChiSo.setText(String.format("%.2f", bmi));
