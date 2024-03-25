@@ -6,7 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
-
+import java.text.DecimalFormat;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -47,6 +47,18 @@ public class MainActivity extends AppCompatActivity {
         nutReset.setOnClickListener(this);
         radioButtonNu.setOnClickListener(this);
         radioButtonNam.setOnClickListener(this);
-        
     }
-}
+    void onClick(View v){
+        try {
+            //Lấy giá trị nhập vào và ép kiểu về float
+            double chieuCao = Double.parseDouble(editTextHeight.getText().toString());
+            double canNang = Double.parseDouble(editTextWeight.getText().toString());
+            DecimalFormat df = new DecimalFormat("0.00"); //định dạng lấy 2 con số
+            double BMI = canNang / Math.pow(chieuCao, 2) * 10000; //chiều cao * chiều cao
+            switch (v.getId()){ //lấy id các button
+                case R.id.btntinh: //nếu id là button tính
+                    txtChiSo.set
+            }
+        }
+
+    }
