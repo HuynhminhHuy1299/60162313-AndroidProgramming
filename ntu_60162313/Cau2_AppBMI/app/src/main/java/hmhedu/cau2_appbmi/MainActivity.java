@@ -57,7 +57,20 @@ public class MainActivity extends AppCompatActivity {
             double BMI = canNang / Math.pow(chieuCao, 2) * 10000; //chiều cao * chiều cao
             switch (v.getId()){ //lấy id các button
                 case R.id.btntinh: //nếu id là button tính
-                    txtChiSo.set
+                    txtChiSo.setText(df.format(BMI) + "");
+                    if(BMI < 18)
+                        txtDanhGia.setText("Bạn hơi gầy");
+                    else if (18 <= BMI && BMI < 25) {
+                        txtDanhGia.setText("Bạn bình thường");
+                    } else if (25 <= BMI && BMI < 30) {
+                        txtDanhGia.setText("Bạn béo phì cấp độ 1");
+                    } else if (30 <= BMI && BMI < 35) {
+                        txtDanhGia.setText("Bạn béo phì cấp độ 2");
+                    } else if (35 <= BMI) {
+                        txtDanhGia.setText("Bạn béo phì cấp độ 3");
+                    }
+                    break;
+                    
             }
         }
 
