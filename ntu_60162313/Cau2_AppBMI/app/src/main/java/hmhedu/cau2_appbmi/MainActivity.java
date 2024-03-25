@@ -41,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        TimDieuKhien();
+
+        nutTinhBMI.setOnClickListener(this);
+        nutReset.setOnClickListener(this);
+        radioButtonNu.setOnClickListener(this);
+        radioButtonNam.setOnClickListener(this);
         
     }
 }
