@@ -23,6 +23,18 @@ public class MainActivity extends AppCompatActivity {
     Button nutTinhBMI, nutReset;
     TextView txtChiSo, txtDanhGia;
     RadioButton radioButtonNam, radioButtonNu;
+    void TimDieuKhien(){
+        editTextHeight = (EditText) findViewById(R.id.edtheight);
+        editTextWeight = (EditText) findViewById(R.id.edtheight);
+        editTextAge = (EditText) findViewById(R.id.edtage);
+        nutTinhBMI = (Button) findViewById(R.id.btntinh);
+        nutReset = (Button) findViewById(R.id.btnreset);
+        txtChiSo = (TextView) findViewById(R.id.txtChiSo);
+        txtDanhGia = (TextView) findViewById(R.id.txtDanhGia);
+        radioButtonNam = (RadioButton) findViewById(R.id.rdbnam);
+        radioButtonNu = (RadioButton) findViewById(R.id.rdbnu);
+    }
+
 
 
     @Override
