@@ -51,9 +51,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tinhBMI() {
-        try {
-            double height = Double.parseDouble(edtheight.getText().toString());
-            double weight = Double.parseDouble(edtweight.getText().toString());
+        String heightStr = edtheight.getText().toString();
+        String weightStr = edtweight.getText().toString();
+
+        if (!heightStr.isEmpty() && !weightStr.isEmpty()) {
+            double height = Double.parseDouble(heightStr);
+            double weight = Double.parseDouble(weightStr);
 
             double bmi = weight / (height * height / 10000);
 
@@ -62,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
             if (bmi < 18.5) {
                 danhGia = "Bạn bị gầy";
             } else if (bmi >= 18.5 && bmi < 24.9) {
-                danhGia = "Bình thường";
+                danhGia = "Bạn bình thường";
             } else if (bmi >= 24.9 && bmi < 29.9) {
                 danhGia = "Bạn hơi béo";
             } else {
@@ -71,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
             txtChiSo.setText(String.format("%.2f", bmi));
             txtDanhGia.setText(danhGia);
-        } catch (Exception e) {
+        } else {
             Toast.makeText(this, "Nhập thông tin không hợp lệ", Toast.LENGTH_SHORT).show();
         }
     }
