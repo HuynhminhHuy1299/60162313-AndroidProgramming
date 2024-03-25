@@ -34,7 +34,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CHIỀU CAO:"
+            android:text="CHIỀU CAO (cm):"
             android:textStyle="bold"
             android:textSize="25dp"
             android:textColor="#C8CBCD"/>
@@ -55,7 +55,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CÂN NẶNG:"
+            android:text="CÂN NẶNG (kg):"
             android:textSize="25dp"
             android:textStyle="bold"
             android:textColor="#C8CBCD"/>
@@ -89,12 +89,51 @@
             android:hint="Nhập độ tuổi"
             />
     </LinearLayout>
-    
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nam"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="#C8CBCD">
+        </TextView>
 
+        <RadioButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:gravity="center_vertical"
+            android:id="@+id/rdbnam">
+
+        </RadioButton>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nữ"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="#C8CBCD"
+            android:layout_marginLeft="20dp">
+        </TextView>
+
+        <RadioButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:gravity="center_vertical"
+            android:id="@+id/rdbnu">
+
+        </RadioButton>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp">
         <Button
             android:id="@+id/btntinh"
             android:layout_width="200dp"
@@ -140,7 +179,7 @@
     <TableRow
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="15dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
