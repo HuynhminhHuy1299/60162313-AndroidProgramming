@@ -24,7 +24,7 @@ public class FrameTinhTienDien extends JFrame {
 	public FrameTinhTienDien() {
 		setTitle("Ứng dụng tính tiền điện");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 671, 516);
+		setBounds(100, 100, 653, 389);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -49,12 +49,12 @@ public class FrameTinhTienDien extends JFrame {
 		
 		JLabel labelTongTienDien = new JLabel("Tổng Tiền Điện");
 		labelTongTienDien.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		labelTongTienDien.setBounds(10, 401, 125, 33);
+		labelTongTienDien.setBounds(22, 265, 125, 33);
 		contentPane.add(labelTongTienDien);
 		
 		textfieldTongTienDien = new JTextField();
 		textfieldTongTienDien.setColumns(10);
-		textfieldTongTienDien.setBounds(145, 403, 86, 33);
+		textfieldTongTienDien.setBounds(156, 267, 86, 33);
 		contentPane.add(textfieldTongTienDien);
 		
 		JButton btnTinh = new JButton("Tính");
