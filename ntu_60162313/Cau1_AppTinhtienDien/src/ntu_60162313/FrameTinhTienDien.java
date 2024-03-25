@@ -69,5 +69,28 @@ public class FrameTinhTienDien extends JFrame {
 		btnReset.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnReset.setBounds(485, 16, 141, 47);
 		contentPane.add(btnReset);
+		
+		
+	}
+	private double tinhTienDien(int soDien) {
+	    // Khai bao bien de luu tong tien dien
+	    double tongTien = 0;
+
+	    // Tinh tien dien dua tren cac bac thue bao
+	    if (soDien <= 50) {
+	        tongTien = soDien * 1.484;
+	    } else if (soDien <= 100) {
+	        tongTien = (50 * 1.484) + ((soDien - 50) * 1.533);
+	    } else if (soDien <= 200) {
+	        tongTien = (50 * 1.484) + (50 * 1.533) + ((soDien - 100) * 1.786);
+	    } else if (soDien <= 300) {
+	        tongTien = (50 * 1.484) + (50 * 1.533) + (100 * 1.786) + ((soDien - 200) * 2.242);
+	    } else if (soDien <= 400) {
+	        tongTien = (50 * 1.484) + (50 * 1.533) + (100 * 1.786) + (100 * 2.242) + ((soDien - 300) * 2.503);
+	    } else {
+	        tongTien = (50 * 1.484) + (50 * 1.533) + (100 * 1.786) + (100 * 2.242) + (100 * 2.503) + ((soDien - 400) * 2.587);
+	    }
+
+	    return tongTien;
 	}
 }
