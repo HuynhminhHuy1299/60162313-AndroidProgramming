@@ -6,6 +6,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.text.DecimalFormat;
 
 import androidx.activity.EdgeToEdge;
@@ -47,17 +49,17 @@ public class MainActivity extends AppCompatActivity {
         radioButtonNu.setOnClickListener(this);
         radioButtonNam.setOnClickListener(this);
     }
-    void onClick(View v){
+    void onClick(View v) {
         try {
             //Lấy giá trị nhập vào và ép kiểu về float
             double chieuCao = Double.parseDouble(editTextHeight.getText().toString());
             double canNang = Double.parseDouble(editTextWeight.getText().toString());
             DecimalFormat df = new DecimalFormat("0.00"); //định dạng lấy 2 con số
             double BMI = canNang / Math.pow(chieuCao, 2) * 10000; //chiều cao * chiều cao
-            switch (v.getId()){ //lấy id các button
+            switch (v.getId()) { //lấy id các button
                 case R.id.btntinh: //nếu id là button tính
                     txtChiSo.setText(df.format(BMI) + "");
-                    if(BMI < 18)
+                    if (BMI < 18)
                         txtDanhGia.setText("Bạn hơi gầy");
                     else if (18 <= BMI && BMI < 25) {
                         txtDanhGia.setText("Bạn bình thường");
@@ -76,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
                     txtChiSo.setText("");
                     break;
             }
-        } catch ()
+        } catch (Exception e) {
+            Toast.makeText(getBaseContext(), "Bạn chưa nhập dữ liệu", Toast.LENGTH_SHORT).show();
+        }
+    }
 
     }
