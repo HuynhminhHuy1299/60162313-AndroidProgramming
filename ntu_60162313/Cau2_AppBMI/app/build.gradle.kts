@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "ntu_60162313.cau2_appbmi"
+    namespace = "ntu_60162313.cau2_appBMI"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "ntu_60162313.cau2_appbmi"
+        applicationId = "ntu_60162313.cau2_appBMI"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
