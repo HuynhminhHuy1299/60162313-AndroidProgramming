@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.text.DecimalFormat;
 
 import javax.swing.JOptionPane;
 import javax.swing.JFrame;
@@ -43,7 +44,7 @@ public class FrameTinhTienDien extends JFrame {
 		
 		JTextArea txtChuThich = new JTextArea();
 		txtChuThich.setFont(new Font("Monospaced", Font.PLAIN, 15));
-		txtChuThich.setText("Bậc 1: Mức sử dụng từ 0 - 50kWh: 1.678đ/kWh.\r\nBậc 2: Mức sử dụng từ 51 - 100kWh: 1.734đ/kWh.\r\nBậc 3: Mức sử dụng từ 101 - 200kWh: 2.014đ/kWh.\r\nBậc 4: Mức sử dụng từ 201 - 300kWh: 2.536đ/kWh.\r\nBậc 5: Mức sử dụng từ 301 - 400kWh: 2.834đ/kWh.\r\nBậc 6: Mức sử dụng từ 401Wh trở lên: 2.927đ/kWh.");
+		txtChuThich.setText("Bậc 1 (0 đến 50kWh): 1.484 VND(/kWh)\r\nBậc 2 (51 đến 100kWh): 1.533 VND (/kWh)\r\nBậc 3 (101 đến 200 kWh): 1.786 VND (/kWh)\r\nBậc 4 (201 đến 300 kWh): 2.242 VND (/kWh)\r\nBậc 5 (301 đến 400 kWh): 2.503 VND (/kWh)\r\nBậc 6 (401 kWh trở lên): 2.587 VND (/kWh)");
 		txtChuThich.setBounds(28, 101, 524, 144);
 		contentPane.add(txtChuThich);
 		
@@ -65,6 +66,7 @@ public class FrameTinhTienDien extends JFrame {
         btnTinh.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 tinhTongTienDien();
+                
             }
         });
 		
@@ -122,6 +124,10 @@ public class FrameTinhTienDien extends JFrame {
 	    
 	    // Hien thi tong tien dien tinh duoc vao textfieldTongTienDien
 	    textfieldTongTienDien.setText(String.valueOf(tongTien));
+	 // Hien thi tong tien dien tinh duoc vao textfieldTongTienDien
+	    textfieldTongTienDien.setText(String.format("%.3f ₫", tongTien));
+	    // Format số tiền với đơn vị tiền VND và hiển thị tối đa hai số sau dấu phẩy
+
 	}
 	// Hàm resetForm để xóa nội dung trong các textfield
 	private void resetForm() {
