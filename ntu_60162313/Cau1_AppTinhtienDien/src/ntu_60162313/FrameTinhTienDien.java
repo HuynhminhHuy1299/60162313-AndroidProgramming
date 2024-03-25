@@ -58,6 +58,12 @@ public class FrameTinhTienDien extends JFrame {
 		btnTinh.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnTinh.setBounds(334, 16, 141, 47);
 		contentPane.add(btnTinh);
+		// Thêm ActionListener cho nút "Tính"
+        btnTinh.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                tinhTongTienDien();
+            }
+        });
 		
 		JButton btnReset = new JButton("Reset");
 		btnReset.setFont(new Font("Tahoma", Font.PLAIN, 16));
